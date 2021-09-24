@@ -5,11 +5,12 @@
  * See COPYING.txt for license details.
  */
 -->
-<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="page.top">
-            <block class="Ritesh\Firstmodule\Block\Article" name="delivery.block" template="Ritesh_Firstmodule::delivery.phtml" after="product.info.details">
+        <referenceContainer name="content">
+            <block class="Ritesh\Firstmodule\Block\Article" name="delivery.block" template="Magento_Catalog::newDesc.phtml" after="product.info.overview">
             </block>
         </referenceContainer>
+        
     </body>
 </page>
