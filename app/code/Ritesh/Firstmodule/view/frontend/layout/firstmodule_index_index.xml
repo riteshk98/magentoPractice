@@ -3,8 +3,9 @@
 <head>
     <title>Ritesh-First Module</title>
 </head>
+<update handle="additional_update_layout" />
 <body>
-    <referenceContainer name="content">
+    <referenceContainer name="sidebar.additional">
         <block class="Ritesh\Firstmodule\Block\Article"
             name="articleData"
                 template="Ritesh_Firstmodule::view.phtml" />

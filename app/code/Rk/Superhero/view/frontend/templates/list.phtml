@@ -1,0 +1,41 @@
+<?php
+/**
+ * @var $block \Rk\Superhero\Block\Display
+ */
+
+$heroes = $block->getAllSuperHeroes();
+?>
+<?php if (count($heroes) > 0): ?>
+    <table border="1">
+        <tr>
+            <th><?= __("ID") ?></th>
+            <th><?= __("Name") ?></th>
+            <th><?= __("Production Company") ?></th>
+            <th><?= __("Edit/Delete") ?></th>
+        </tr>
+        <?php foreach ($heroes as $hero): ?>
+            <tr>
+                <td><?= $hero->getId() ?></td>
+                <td><?= $hero->getName() ?></td>
+                <td><?= $hero->getProductionCompany() ?></td>
+                <td><a href="<?= $block->getEditPageUrl()?>">Edit </a><a href="<?= $block->getDeleteUrl() .'?id='.$hero->getData('id');?>">Delete</a></td><!-- todo Add the functionality of Edit and Delete Hero -->
+            </tr>
+        <?php endforeach; ?>
+    </table>
+<?php else: ?>
+    <h1 style="color: red"><?= __("Super Heroes still not born :(") ?></h1>
+<?php endif; ?>
+<hr />
+<form method="post" action="<?= $block->getPostUrl() ?>">
+    <fieldset style="margin: 0 auto; width: 50%">
+        <div>
+            <label for="name"><?= __("Name") ?></label>
+                <input type="text" name="name"/>
+        </div>
+        <div>
+            <label for="production_company"><?= __("Production Company") ?></label>
+                <input type="text" name="production_company"/>
+        </div>
+        <input type="submit" value="<?= __("Add Hero") ?>" />
+    </fieldset>
+</form>

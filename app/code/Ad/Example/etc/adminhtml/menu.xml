@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Created By : Rohan Hapani
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ad_Example::view" title="Feedback" module="Ad_Example" sortOrder="50" resource="Ad_Example::view"/>
+        <add id="Ad_Example::menu" title="Manage Feedbacks" module="Ad_Example" sortOrder="20" parent="Ad_Example::view" action="example/index/index" resource="Ad_Example::menu"/>
+    </menu>
+</config>
