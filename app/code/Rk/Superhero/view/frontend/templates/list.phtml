@@ -2,8 +2,11 @@
 /**
  * @var $block \Rk\Superhero\Block\Display
  */
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 
 $heroes = $block->getAllSuperHeroes();
+$groupCollection = $objectManager->create('Ritesh\Firstmodule\Model\CarsShowroom');
+$groupCollection->getArticles();
 ?>
 <?php if (count($heroes) > 0): ?>
     <table border="1">

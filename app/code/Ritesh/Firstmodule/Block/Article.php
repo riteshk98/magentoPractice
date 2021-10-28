@@ -5,6 +5,7 @@ use \Magento\Framework\View\Element\Template;
 
 class Article extends Template
 {
+    protected $var1;
     /**
      * Constructor
      *
@@ -12,9 +13,17 @@ class Article extends Template
      * @param array $data
     */
     public function __construct(
+
+
         \Magento\Backend\Block\Template\Context $context,
-        array $data = []
+        array $data = [],
+        $var1 = []
     ){
+        $this->var1 = $var1;
+
+        // echo($var1);
+        // var_dump($var1);
+        // exit();
         parent::__construct($context, $data);
      }
 
@@ -23,6 +32,9 @@ class Article extends Template
     */
     public function getArticles()
     {
+        var_dump($this->var1);
+        exit();
+
         return 'getArticles function of the Block class called successfully';
     }
 }

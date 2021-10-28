@@ -1,18 +1,53 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-	<type name="Magento\Theme\Model\View\Design">
+	<!-- <type name="Magento\Theme\Model\View\Design">
         <arguments>
              <argument name="themes" xsi:type="array">
                  <item name="adminhtml" xsi:type="string">Ritesh/firstadmintheme</item>
              </argument>
          </arguments>
-    </type>
+    </type> -->
 <!-- 	<type name="Magento\Catalog\Model\Product">
 		<plugin name="afterProductName" type="Ritesh\Firstmodule\Plugin\Product" sortOrder="1" />
 	</type> -->
 	<!-- <type name="Magento\Catalog\Model\Product">
 		<plugin name="beforeProductName" type="Ritesh\Firstmodule\Plugin\Product" sortOrder="1" />
 	</type> -->
+	<!-- <type name="Ritesh\Firstmodule\Block\Article">
+		<arguments>
+			<argument name="var1" xsi:type="array">
+				<item name="banana" xsi:type="string">Banana</item>
+                <item name="grape" xsi:type="string">Grape</item>
+			</argument> -->
+			<!-- <argument name="class.injected" xsi:type="Ritesh\Firstmodule\Helper\Data"></argument>
+		</arguments>
+	</type> -->
+	<virtualType name="FirstList" type="Ritesh\Firstmodule\Model\Cars">
+        <arguments>
+            <argument name="cars" xsi:type="array">
+                <item name="audi" xsi:type="string">Audi</item>
+                <item name="mercedes" xsi:type="string">Mercedes</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="SecondList" type="Ritesh\Firstmodule\Model\Cars">
+        <arguments>
+            <argument name="cars" xsi:type="array">
+                <item name="bmw" xsi:type="string">BMW</item>
+                <item name="jaguar" xsi:type="string">Jaguar</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Ritesh\Firstmodule\Model\CarsShowroom">
+        <arguments>
+            <argument name="carsList" xsi:type="array">
+                <item name="FirstList" xsi:type="object">FirstList</item>
+                <item name="SecondList" xsi:type="object">SecondList</item>
+            </argument>
+        </arguments>
+    </type>
+
 	<preference for="Magento\Catalog\Model\Product" type="Ritesh\Firstmodule\Model\Catalog\Product" />
 	
 </config>

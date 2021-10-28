@@ -1,0 +1,24 @@
+<hr />
+<form method="post" action="<?= $block->getPostUrl() ?>">
+    <fieldset style="margin: 0 auto; width: 50%">
+        <div>
+            <label for="name"><?= __("Name") ?></label>
+                <input type="text" name="name"/>
+        </div>
+        <div>
+            <label for="email"><?= __("Email") ?></label>
+                <input type="text" name="email"/>
+        </div>
+        <div>
+            <label for="feedback"><?= __("Feedback") ?></label>
+            <textarea id="feedback" name="feedback" rows="3" cols="50"></textarea>       
+        </div>
+        <div>
+            <input type="checkbox" id="status" name="status" value="1">
+            <label for="status"> Get Notifications</label><br>          
+        </div>
+
+        <br>
+        <input type="submit" value="<?= __("Add Feedback") ?>" />
+    </fieldset>
+</form>
